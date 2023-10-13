@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MovieList = () => {
     const [movies, setMovies] = useState([]);
@@ -34,7 +34,7 @@ const MovieList = () => {
         <h2>Movie List</h2>
         {movies.map(movie => (
             <li key={movie.id}>
-                <Link to={{ pathname: '/movies/' + movie.id, state: { data: { id : movie.id, title: movie.title }}}}>{movie.title}</Link>
+                <Link to={`/movies/${movie.id}`} state={{id: movie.id}}>{movie.title}</Link>
             </li>
           ))}
       </div>
