@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import MovieDetail from './MovieDetail';
 
 const MovieList = () => {
     const [movies, setMovies] = useState([]);
@@ -30,13 +31,14 @@ const MovieList = () => {
   
     return (
       <div className="movie-list-main">
-        <div>hello</div>
         <h2>Movie List</h2>
-        {movies.map(movie => (
-            <li key={movie.id}>
-                <Link to={`/movies/${movie.id}`} state={{id: movie.id}}>{movie.title}</Link>
-            </li>
-          ))}
+        <div className='movie-list-list'>
+          {movies.map(movie => (
+              <li key={movie.id}>
+                  <Link className="navlink" to={`/movies/${movie.id}`} state={{id: movie.id}}>{movie.title}</Link>
+              </li>
+            ))}
+        </div>
       </div>
     );
 };

@@ -3,10 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const MovieDetail = () => {
     let { state } = useLocation();
-    console.log(state);
-    //const receivedData = props.location.state.data;
-    //console.log(props);
-    //console.log(receivedData);
+    console.log();
     const [movie, setMovie] = useState(null);
     useEffect(() => {
       const fetchData = async () => {
@@ -20,6 +17,7 @@ const MovieDetail = () => {
           if (response.ok) {
             const result = await response.json();
             setMovie(result);
+            console.log(result);
           } else {
             console.error('Error fetching data:', response.statusText);
           }
@@ -35,11 +33,15 @@ const MovieDetail = () => {
     }
   
     return (
-      <div>
-        <h2>{movie.title}</h2>
-        <p>{movie.overview}</p>
-        <p>{"Budget: " + movie.budget}</p>
-        {/* Add additional movie details here */}
+      <div className='movie-detail-main'>
+        <div className='movie-detail-container' >
+          <h2>{movie.title}</h2>
+          <p>{movie.production_companies[0].name}</p>
+          <p>{movie.overview}</p>
+          <p>{"Budget: " + movie.budget + " Revenue: " + movie.revenue}</p>
+          <p>{movie.release_date}</p>
+          {/* Add additional movie details here */}
+        </div>
       </div>
     );
 };

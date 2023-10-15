@@ -1,0 +1,5 @@
+Movie list orientation - done
+movie list scrollable list - done
+    - make it look better
+
+Navbar look and feel
