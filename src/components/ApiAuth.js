@@ -13,7 +13,6 @@ const ApiAuth = () => {
 
                 if (response.ok) {
                 const result = await response.json();
-                //console.log(result);
                 } else {
                 console.error('Error fetching data:', response.statusText);
                 }
