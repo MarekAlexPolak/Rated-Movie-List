@@ -5,6 +5,7 @@ movie list scrollable list - done
 Navbar look and feel
 
 Search for specific movies
+When already using an id for page change it won't change to another page
 
 
 Sign up 
