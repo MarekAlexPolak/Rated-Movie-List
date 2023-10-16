@@ -1,16 +1,25 @@
 // SearchResults.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-const SearchResults = ({ results }) => {
-  return (
-    <ul className='search-results'>
-      {results.map((item, index) => (
-        <li key={index}>
-          <Link className="navlink" to={`/movies/${movie.id}`} state={{id: movie.id}}>{movie.title}</Link></li>
-      ))}
-    </ul>
-  );
+const SearchResults = ({ results }) => {   
+
+    const [showList, setShowList] = useState(true);
+
+    const handleClick = () => { 
+      if(showList){
+        setShowList(false);
+      }
+    }
+
+    return (
+      showList && <ul className='search-results'>
+                  {results.map((movie, index) => (
+                    <li key={index}>
+                      <NavLink className="navlink" to={`/movies/${movie.id}`} state={{id: movie.id}} onClick={handleClick}>{movie.title}</NavLink></li>
+                  ))}
+                </ul>
+    );
 };
 
 export default SearchResults;

@@ -3,8 +3,14 @@ import { useLocation } from 'react-router-dom';
 
 const MovieDetail = () => {
     let { state } = useLocation();
-    console.log();
     const [movie, setMovie] = useState(null);
+    //console.log(state);
+
+    const handleUrlChange = (data) => {
+      console.log(data);
+      window.location.reload();
+    };
+    
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -17,7 +23,7 @@ const MovieDetail = () => {
           if (response.ok) {
             const result = await response.json();
             setMovie(result);
-            console.log(result);
+            //console.log(result);
           } else {
             console.error('Error fetching data:', response.statusText);
           }
@@ -25,8 +31,17 @@ const MovieDetail = () => {
           console.error('Error fetching data:', error);
         }
       };
+      
       fetchData();
-    }, []);
+  
+      // Listen for changes in the URL
+      window.addEventListener('popstate', handleUrlChange);
+      console.log(window.location.pathname);
+      return () => {
+        // Cleanup: remove the event listener when the component unmounts
+        window.removeEventListener('popstate', handleUrlChange);
+      };
+    }, [window.location.pathname]);
   
     if (!movie) {
       return <div>Loading...</div>;

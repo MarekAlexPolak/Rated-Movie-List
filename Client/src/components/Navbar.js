@@ -5,9 +5,8 @@ import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
 const Navbar = () => {
-
-    const [movies, setMovies] = useState([]);
   
+    const [movies, setMovies] = useState([]);
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -36,17 +35,12 @@ const Navbar = () => {
     const [showResults, setShowResults] = useState(false);
     
     const handleSearch = (term) => {
-        console.log(movies);
-        const filteredResults = movies.filter((item) => {
-                console.log(item.title.toLowerCase().includes(term), term);
-                item.title.toLowerCase().includes(term);
-            }
+        const filteredResults = movies.filter((item) => 
+          item.title.toLowerCase().includes(term.toLowerCase())
         );
         setSearchResults(filteredResults);
-        console.log(filteredResults);
         setShowResults(term !== '');
     };
-
 
     return (
         <div className="navbar-main">
