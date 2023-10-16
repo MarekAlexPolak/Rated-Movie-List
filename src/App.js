@@ -15,8 +15,8 @@ const App = () => {
   return (
     <Router>
         <ApiAuth/>
-        <Navbar />
         <Container fluid>
+          <Navbar />
           <Routes>
             <Route path="/movies/:id" Component={MovieDetail} />
             <Route path="/movies" Component={MovieList} />

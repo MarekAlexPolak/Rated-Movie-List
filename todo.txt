@@ -3,3 +3,10 @@ movie list scrollable list - done
     - make it look better
 
 Navbar look and feel
+
+Search for specific movies
+
+
+Sign up 
+Login
+Disable signup and login and show logout
