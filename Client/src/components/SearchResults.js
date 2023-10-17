@@ -6,9 +6,19 @@ const SearchResults = ({ results }) => {
 
     const [showList, setShowList] = useState(true);
 
+    const refreshWindow = () => {
+      // Refresh the window after 5 milliseconds
+      window.location.reload();
+    };
+
     const handleClick = () => { 
       if(showList){
         setShowList(false);
+      }
+      const timeoutId = setTimeout(refreshWindow, 1);
+
+      return () => { 
+        clearTimeout(timeoutId);
       }
     }
 
