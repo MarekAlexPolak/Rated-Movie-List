@@ -1,21 +1,13 @@
+/* body {
+  color: black;
+} */
 
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #af45b3;
+  align-items: center;
+  gap: 1vw;
 }
 
 .movie-list-main {
@@ -75,27 +67,68 @@
 .navbar-main { 
   display:flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: #888;
-  height: 4em;
+  justify-content: center;
+  width: 100%;
+  /* margin-bottom: 5em; */
 }
 
 .navbar-container { 
   display:flex;
   gap: 2em;
-  padding-right: 10em;
 }
 
-.navbar-search-container { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.navbar-search-container {
   height: 3em;
-  padding-top: 1em;
+  padding-top: 0.5em;
+  align-items: center;
+}
+
+.navbar-logo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  color: black;
+}
+
+.navbar-logo {
+  width: 3em;
+  height: auto;
+  border-radius: 40%;
+}
+
+.navlink {
+  font-size: 1vw;
+  font-style: normal;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.navlink:hover{
+  color:#1a5be7;
+  cursor: pointer;
+}
+
+.navdropdown {
+  color: 'white';
+}
+
+.search-bar-container {
+  display:flex;
+  justify-content: space-between;
+  width: 30em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+.search-bar { 
+  height: 2em;
+  border-radius: 1%;
 }
 
 .search-results {
-  background-color: #888;
+  /* background-color: #202020; */
   width: 24%;
   height: auto;
   border-style: solid;
@@ -104,48 +137,35 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  margin-top: 2.2em;
+  margin-top: 1em;
 }
 
 .search-results li {
-  background-color: #f0f0f0;
+  background-color: 'black';
   padding: 6px;
   margin-bottom: 4px;
   border-radius: 4px;
 }
+
 .search-results .navlink {
   font-size: 15px;
 }
 
-.search-bar-container {
-  display:flex;
-  justify-content: space-between;
+.signup-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup-main Form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 0.5em;
 }
 
-.search-bar { 
-  width: 25em;
-  height: 2em;
-  border-radius: 1%;
-}
-
-.navbar-logo-container {
-  padding-left: 10em;
-}
-
-.navbar-logo {
-  width: 4em;
-  height: auto;
-  border-radius: 40%;
-}
-
-.navlink {
-  font-size: 20px;
-  font-style: normal;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-}
-
-.navlink:hover{
-  color:#1a73e7;
-  cursor: pointer;
+.signup-button {
+  display: flex;
+  justify-content: center;
+  padding: 4px;
 }

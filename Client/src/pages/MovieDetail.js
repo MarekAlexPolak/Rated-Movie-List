@@ -5,11 +5,6 @@ const MovieDetail = () => {
     let { state } = useLocation();
     const [movie, setMovie] = useState(null);
     //console.log(state);
-
-    const handleUrlChange = (data) => {
-      console.log(data);
-      window.location.reload();
-    };
     
     useEffect(() => {
       const fetchData = async () => {
@@ -33,14 +28,6 @@ const MovieDetail = () => {
       };
       
       fetchData();
-  
-      // Listen for changes in the URL
-      window.addEventListener('popstate', handleUrlChange);
-      console.log(window.location.pathname);
-      return () => {
-        // Cleanup: remove the event listener when the component unmounts
-        window.removeEventListener('popstate', handleUrlChange);
-      };
     }, [window.location.pathname]);
   
     if (!movie) {

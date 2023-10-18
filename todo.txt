@@ -3,11 +3,33 @@ movie list scrollable list - done
     - make it look better
 
 Navbar look and feel
+    - position of search, logo, and Navbar
 
 Search for specific movies
-When already using an id for page change it won't change to another page
+    - When already using an id for page change it won't change to another page - done
+    - search bar remains filled after clicking to another page
 
+Sign up
+    - frontend - done
+    - backend connect
 
-Sign up 
 Login
+    - frontend - done
+    - backend connect
+
+
 Disable signup and login and show logout
+    - need backend to do this
+
+
+Frontend prettiness
+    - navbar - done
+    - background color
+    - links match
+
+
+Home page
+ - the movies you've rated and saved
+ - top movies to look at 
+
+Mobile view ready?
