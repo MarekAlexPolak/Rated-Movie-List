@@ -43,8 +43,13 @@ const NavbarComponent = () => {
         setShowResults(term !== '');
     };
 
+    const dropdownItemStyle = {
+      backgroundColor: 'white',  // Blue background
+      color: 'black',
+    };
+
     return (
-        <Navbar bg="secondary" expand="lg">
+        <Navbar bg="dark" expand="lg">
           <div className='navbar-main'>
             <div className="navbar-logo-container">
             <Navbar.Brand as={NavLink} to="/">
@@ -52,11 +57,10 @@ const NavbarComponent = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav>
-                <NavDropdown title="Menu" id="basic-nav-dropdown">
-                  <NavDropdown.Item as={NavLink} to="/movies">Movies</NavDropdown.Item>
+                <NavDropdown title="Menu" id="basic-nav-dropdown" style={{color:'white'}}>
+                  <NavDropdown.Item as={NavLink} to="/movies" style={dropdownItemStyle}>Movies</NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to="/tv-shows" style={dropdownItemStyle}>Tv Shows</NavDropdown.Item>
                 </NavDropdown>
-              </Nav>
             </Navbar.Collapse>
             </div>
             <div className="navbar-search-container">
@@ -64,8 +68,8 @@ const NavbarComponent = () => {
                {showResults && <SearchResults results={searchResults} />}
             </div>
             <div className="navbar-container">
-                  <NavLink to="/signup" className="inactive navlink" activeClassName="active">Sign-up</NavLink> 
                   <NavLink to="/login" className="inactive navlink" activeClassName="active">Login</NavLink>
+                  <NavLink to="/signup" className="inactive navlink" activeClassName="active">Sign-up</NavLink> 
             </div>
           </div>
         </Navbar>

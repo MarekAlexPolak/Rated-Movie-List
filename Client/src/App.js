@@ -14,11 +14,18 @@ import { Container } from 'react-bootstrap';
 
 
 const App = () => {
+
+  const containerStyle = { 
+    backgroundColor: 'rgb(10,10,10)',
+    color: 'white',
+    minHeight: '100vh'
+  }
+
   return (
     <Router>
         <ApiAuth/>
         <NavbarComponent />
-        <Container fluid style={{ backgroundColor: 'black', color: 'white', minHeight: '100vh' }}>
+        <Container fluid style={containerStyle}>
             <Routes>
               <Route path="/movies/:id" Component={MovieDetail} />
               <Route path="/movies" Component={MovieList} />

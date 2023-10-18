@@ -106,8 +106,12 @@
 }
 
 .navlink:hover{
-  color:#281ae7;
+  color:#1a5be7;
   cursor: pointer;
+}
+
+.navdropdown {
+  color: 'white';
 }
 
 .search-bar-container {
