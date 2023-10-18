@@ -1,10 +1,11 @@
 import React, { useState,  useEffect } from 'react';
 import { NavLink } from "react-router-dom";
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import Logo from '../assets/images/logo.jpg';
 import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 
-const Navbar = () => {
+const NavbarComponent = () => {
   
     const [movies, setMovies] = useState([]);
     useEffect(() => {
@@ -43,22 +44,32 @@ const Navbar = () => {
     };
 
     return (
-        <div className="navbar-main">
+        <Navbar bg="secondary" expand="lg">
+          <div className='navbar-main'>
             <div className="navbar-logo-container">
-                <img className="navbar-logo" src={Logo} alt="This is the logo"></img>
+            <Navbar.Brand as={NavLink} to="/">
+              <img className="navbar-logo" src={Logo} alt="This is the logo"></img>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav>
+                <NavDropdown title="Menu" id="basic-nav-dropdown">
+                  <NavDropdown.Item as={NavLink} to="/movies">Movies</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+            </Navbar.Collapse>
             </div>
             <div className="navbar-search-container">
-                <SearchBar onSearch={handleSearch } />
-                 {showResults && <SearchResults results={searchResults} /> }
+               <SearchBar onSearch={handleSearch }/>
+               {showResults && <SearchResults results={searchResults} />}
             </div>
             <div className="navbar-container">
-                <NavLink to="/" className="inactive navlink" activeClassName="active">Home</NavLink> 
-                <NavLink to="/movies" className="inactive navlink" activeClassName="active">Movies</NavLink>
-                <NavLink to="/signup" className="inactive navlink" activeClassName="active">Sign-up</NavLink> 
-                <NavLink to="/login" className="inactive navlink" activeClassName="active">Login</NavLink>
+                  <NavLink to="/signup" className="inactive navlink" activeClassName="active">Sign-up</NavLink> 
+                  <NavLink to="/login" className="inactive navlink" activeClassName="active">Login</NavLink>
             </div>
-        </div>
+          </div>
+        </Navbar>
     );
 }
 
-export default Navbar;
+export default NavbarComponent;

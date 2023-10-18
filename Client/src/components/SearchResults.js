@@ -15,7 +15,7 @@ const SearchResults = ({ results }) => {
       if(showList){
         setShowList(false);
       }
-      const timeoutId = setTimeout(refreshWindow, 1);
+      const timeoutId = setTimeout(refreshWindow, 0.1);
 
       return () => { 
         clearTimeout(timeoutId);

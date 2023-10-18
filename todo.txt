@@ -20,3 +20,16 @@ Login
 
 Disable signup and login and show logout
     - need backend to do this
+
+
+Frontend prettiness
+    - navbar - done
+    - background color
+    - links match
+
+
+Home page
+ - the movies you've rated and saved
+ - top movies to look at 
+
+Mobile view ready?
