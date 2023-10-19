@@ -39,38 +39,40 @@ const Signup = () => {
         };
     return (
         <div className="signup-main">
-            <h2>Sign Up</h2>
-            <Form onSubmit={handleUserSignup}>
-                <Form.Group controlId="username">
-                <Form.Control
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(event) => setUsername(event.target.value)}
-                />
-                </Form.Group>
-                <Form.Group controlId="email">
-                <Form.Control
-                    type="email"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                />
-                </Form.Group>
-                <Form.Group controlId="password">
-                <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                />
-                </Form.Group>
-                <div className="signup-button">
-                    <Button variant="primary" type="submit">
-                        Sign Up
-                    </Button>
-                </div> 
-            </Form>
+            <div className="signup-container">
+                <h2>Sign Up</h2>
+                <Form onSubmit={handleUserSignup}>
+                    <Form.Group controlId="username">
+                    <Form.Control
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(event) => setUsername(event.target.value)}
+                    />
+                    </Form.Group>
+                    <Form.Group controlId="email">
+                    <Form.Control
+                        type="email"
+                        placeholder="Email"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
+                    </Form.Group>
+                    <Form.Group controlId="password">
+                    <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
+                    </Form.Group>
+                    <div className="signup-button">
+                        <Button variant="primary" type="submit">
+                            Create Account
+                        </Button>
+                    </div>
+                </Form>
+            </div>
         </div>
     );
 }

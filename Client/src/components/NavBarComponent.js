@@ -60,6 +60,7 @@ const NavbarComponent = () => {
                 <NavDropdown title="Menu" id="basic-nav-dropdown" style={{color:'white'}}>
                   <NavDropdown.Item as={NavLink} to="/movies" style={dropdownItemStyle}>Movies</NavDropdown.Item>
                   <NavDropdown.Item as={NavLink} to="/tv-shows" style={dropdownItemStyle}>Tv Shows</NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to="/my-ratings" style={dropdownItemStyle}>My Ratings</NavDropdown.Item>
                 </NavDropdown>
             </Navbar.Collapse>
             </div>

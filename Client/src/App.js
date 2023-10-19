@@ -18,22 +18,26 @@ const App = () => {
   const containerStyle = { 
     backgroundColor: 'rgb(10,10,10)',
     color: 'white',
-    minHeight: '100vh'
+    minHeight: '100vh',
+    width: '100%',
+    padding: '0',
   }
 
   return (
     <Router>
         <ApiAuth/>
-        <NavbarComponent />
         <Container fluid style={containerStyle}>
-            <Routes>
-              <Route path="/movies/:id" Component={MovieDetail} />
-              <Route path="/movies" Component={MovieList} />
-              <Route path="/signup" Component={Signup} />
-              <Route path="/login" Component={Login} />
-              <Route path="/" Component={Home}>
-              </Route>
-            </Routes>
+          <NavbarComponent />
+          <Routes>
+            <Route path="/movies/:id" Component={MovieDetail} />
+            <Route path="/movies" Component={MovieList} />
+            {/* <Route path="/tv-shows" Component={TvShowList} />
+            <Route path="/my-ratings" Component={MyRatings} /> */}
+            <Route path="/signup" Component={Signup} />
+            <Route path="/login" Component={Login} />
+            <Route path="/" Component={Home}>
+            </Route>
+          </Routes>
         </Container>
     </Router>
   );
