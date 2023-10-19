@@ -12,9 +12,12 @@ Search for specific movies
 Sign up
     - frontend - done
     - backend connect
+        - make sure placeholders are correct
+    - add a already have an account -> Sign in 
 
 Login
     - frontend - done
+        - make sure placeholders are correct
     - backend connect
 
 

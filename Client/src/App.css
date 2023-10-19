@@ -1,13 +1,10 @@
-/* body {
-  color: black;
-} */
-
 .home-main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1vw;
+  min-height: 70vh;
 }
 
 .movie-list-main {
@@ -51,8 +48,9 @@
 .movie-detail-main {
   display: flex;
   justify-content: center;
+  align-items: center;
   align-content: flex-end;
-  padding: 2em;
+  height: 80vh;
 }
 
 .movie-detail-container {
@@ -62,6 +60,7 @@
   border-style: solid;
   width: 40%;
   padding: 1em;
+  background-color: rgb(110, 110, 110);
 }
 
 .navbar-main { 
@@ -118,7 +117,7 @@
   display:flex;
   justify-content: space-between;
   width: 30em;
-  padding-right: 1em;
+  padding-right: 2em;
   padding-left: 1em;
 }
 
@@ -128,7 +127,7 @@
 }
 
 .search-results {
-  /* background-color: #202020; */
+  background-color: #202020;
   width: 24%;
   height: auto;
   border-style: solid;
@@ -153,19 +152,30 @@
 
 .signup-main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 80vh;
 }
+
+.signup-container {
+  width: 30%;
+  background-color: rgb(110, 110, 110);
+  padding: 1vw;
+  border-radius: 1%;
+  border-color: white;
+  border-style: solid;
+}
+
 .signup-main Form {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  gap: 0.5em;
+  width: 100%;
+  gap: 0.7em;
+  padding: 5px;
 }
 
 .signup-button {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   padding: 4px;
 }

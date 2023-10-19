@@ -37,30 +37,32 @@ const Login = () => {
         };
     return (
         <div className="signup-main">
-            <h2>Login</h2>
-            <Form onSubmit={handleUserSignup}>
-                <Form.Group controlId="username">
-                <Form.Control
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={(event) => setUsername(event.target.value)}
-                />
-                </Form.Group>
-                <Form.Group controlId="password">
-                <Form.Control
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                />
-                </Form.Group>
-                <div className="signup-button">
-                    <Button variant="primary" type="submit">
-                        Login
-                    </Button>
-                </div> 
-            </Form>
+            <div className="signup-container">
+                <h2>Login</h2>
+                <Form onSubmit={handleUserSignup}>
+                    <Form.Group controlId="username">
+                    <Form.Control
+                        type="text"
+                        placeholder="Username"
+                        value={username}
+                        onChange={(event) => setUsername(event.target.value)}
+                    />
+                    </Form.Group>
+                    <Form.Group controlId="password">
+                    <Form.Control
+                        type="password"
+                        placeholder="Password"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
+                    </Form.Group>
+                    <div className="signup-button">
+                        <Button variant="primary" type="submit">
+                            Login
+                        </Button>
+                    </div> 
+                </Form>
+            </div>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const MovieDetail = () => {
     let { state } = useLocation();
@@ -42,7 +43,9 @@ const MovieDetail = () => {
           <p>{movie.overview}</p>
           <p>{"Budget: " + movie.budget + " Revenue: " + movie.revenue}</p>
           <p>{movie.release_date}</p>
-          {/* Add additional movie details here */}
+          <Button>
+            Rate
+          </Button>
         </div>
       </div>
     );
