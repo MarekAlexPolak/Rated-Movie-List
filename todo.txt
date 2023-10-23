@@ -9,17 +9,6 @@ Search for specific movies
     - When already using an id for page change it won't change to another page - done
     - search bar remains filled after clicking to another page
 
-Sign up
-    - frontend - done
-    - backend connect
-        - make sure placeholders are correct
-    - add a already have an account -> Sign in 
-
-Login
-    - frontend - done
-        - make sure placeholders are correct
-    - backend connect
-
 
 Disable signup and login and show logout
     - need backend to do this
@@ -36,3 +25,8 @@ Home page
  - top movies to look at 
 
 Mobile view ready?
+
+
+
+Backend Placeholders
+- 

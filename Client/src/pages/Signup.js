@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button} from "react-bootstrap";
+import { NavLink } from 'react-router-dom';
 import { useNavigate } from "react-router-dom"; 
 
 
@@ -66,12 +67,16 @@ const Signup = () => {
                         onChange={(event) => setPassword(event.target.value)}
                     />
                     </Form.Group>
-                    <div className="signup-button">
-                        <Button variant="primary" type="submit">
-                            Create Account
-                        </Button>
-                    </div>
                 </Form>
+                <div className="signup-login-prompt">
+                        <span>Already have an account?&nbsp;&nbsp;</span>
+                        <NavLink to="/login" className="inactive signup-navlink" activeClassName="active">Login</NavLink>
+                </div>
+                <div className="signup-button">
+                    <Button variant="primary" type="submit">
+                        Create Account
+                    </Button>
+                </div>
             </div>
         </div>
     );
