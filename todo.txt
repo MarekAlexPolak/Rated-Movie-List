@@ -29,4 +29,8 @@ Mobile view ready?
 
 
 Backend Placeholders
-- 
+- signup - done
+- login - done
+- rating - 
+- movies list
+- movies details
