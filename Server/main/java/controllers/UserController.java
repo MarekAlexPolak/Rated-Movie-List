@@ -21,15 +21,15 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}")
+    /*@GetMapping("/{id}")
     public ResponseEntity<User> getSingleUser(@PathVariable Long id) {
         // Logic to retrieve user from the database based on id
-        User foundUser = getUserByIdFromDatabase(id); // Replace with actual logic
+        User foundUser = userService.getUserByIdFromDatabase(id); // Replace with actual logic
         if (foundUser == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(foundUser, HttpStatus.OK);
-    }
+    }*/
 
     @PostMapping("/add")
     public ResponseEntity<?> addUser(@RequestBody User userInput) {
@@ -49,16 +49,38 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User loginInput) {
-        // Logic to find the user based on username or email
-        User foundUser = findUserByUsernameOrEmail(loginInput.getUsername()); // Replace with actual logic
-        if (foundUser == null) {
-            return new ResponseEntity<>("Can't find this user", HttpStatus.NOT_FOUND);
+        try {
+            // Logic to find the user based on username or email
+            User foundUser = userService.findUserByUsernameOrEmail(loginInput.getUsername()); 
+            if (foundUser == null) {
+                return new ResponseEntity<>("Can't find this user", HttpStatus.NOT_FOUND);
+            }
+            boolean correctPw = foundUser.checkPassword(loginInput.getPassword());
+            if (!correctPw) {
+                return new ResponseEntity<>("Wrong password!", HttpStatus.UNAUTHORIZED);
+            }
+            String token = authUtils.signToken(foundUser); // Sign a token for the user
+            return new ResponseEntity<>(token, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("An error occurred: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        boolean correctPw = foundUser.isCorrectPassword(user.getPassword());
-        if (!correctPw) {
-            return new ResponseEntity<>("Wrong password!", HttpStatus.UNAUTHORIZED);
+    }
+
+    @PostMapping("/users/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updateInput) {
+        try {
+            // Check if the user input contains a new password
+            if (updateInput.getPassword() != null && !updateInput.getPassword().isEmpty()) {
+                updateInput.setPassword(updateInput.getPassword());
+            }
+            // Logic to update the user in the database
+            User updatedUser = userService.updateUser(id, updateInput); // Implement the updateUser method in the UserService
+            if (updatedUser == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        String token = authUtils.signToken(foundUser); // Sign a token for the user
-        return new ResponseEntity<>(token, HttpStatus.OK);
     }
 }
